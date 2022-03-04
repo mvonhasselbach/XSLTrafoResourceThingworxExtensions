@@ -4,4 +4,4 @@ This repo hosts two Thingworx Extensions:
     with a Javascript Snippet to transform XML via XSL
  2. The [XSLTrafoResource_Examples Extension](XSLTrafoResourceExample) has examples on how to use the XSLTrafoResource Extension.
  
- The Thingworx importable packages of these two extensions is available from the [Releases section](releases).
+ The Thingworx importable packages of these two extensions is available from the [Releases section](../../releases).
