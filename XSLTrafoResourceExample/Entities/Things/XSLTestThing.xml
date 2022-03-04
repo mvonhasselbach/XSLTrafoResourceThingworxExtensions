@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b12"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="H2PersistenceProviderPackage"
+ revision="0"
+ schemaVersion="1050"
+ universal="">
+    <Things>
+        <Thing
+         description=""
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         lastModifiedDate="2022-03-04T11:48:03.765+01:00"
+         name="XSLTestThing"
+         projectName="XSLTrafoResource_Examples"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.isPersistent="true"
+                     baseType="BLOB"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="zipWithXSLContent"
+                     ordinal="2"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="Pack">
+                        <ResultType
+                         baseType="NOTHING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="Setup">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="TestWithXSLfromInput">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             aspect.PP-63427ceb-313b-4ca4-ab83-4d2e832c8908="{&quot;defaultValue1646390733861&quot;:&quot;PP-63427ceb-313b-4ca4-ab83-4d2e832c8908-defaultValue1646390733861&quot;}"
+                             aspect.PP-adfddf75-0781-4351-8d11-d89d8f6c9774="{&quot;defaultValue1646390832845&quot;:&quot;PP-adfddf75-0781-4351-8d11-d89d8f6c9774-defaultValue1646390832845&quot;,&quot;defaultValue1646390832877&quot;:&quot;PP-adfddf75-0781-4351-8d11-d89d8f6c9774-defaultValue1646390832877&quot;}"
+                             aspect.defaultValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;ARTICLE&gt;&#xD;&#xA;  &lt;TITLE&gt;A Sample Article&lt;/TITLE&gt;&#xD;&#xA;  &lt;SECT&gt;The First Major Section&#xD;&#xA;     &lt;PARA&gt;This section will introduce a subsection.&lt;/PARA&gt;&#xD;&#xA;     &lt;SECT&gt;The Subsection Heading&#xD;&#xA;       &lt;PARA&gt;This is the text of the subsection.&#xD;&#xA;       &lt;/PARA&gt;&#xD;&#xA;     &lt;/SECT&gt;&#xD;&#xA;  &lt;/SECT&gt;&#xD;&#xA;&lt;/ARTICLE&gt;"
+                             baseType="XML"
+                             description=""
+                             name="xml"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.PP-1ecca1af-26d5-4bf3-8749-4a3545ac6187="{&quot;defaultValue1646390845818&quot;:&quot;PP-1ecca1af-26d5-4bf3-8749-4a3545ac6187-defaultValue1646390845818&quot;}"
+                             aspect.defaultValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;&#xD;&#xA;  &lt;xsl:output method=&quot;html&quot;/&gt; &#xD;&#xA; &#xD;&#xA;  &lt;xsl:template match=&quot;/&quot;&gt;&#xD;&#xA;    &lt;html&gt;&lt;body&gt;&#xD;&#xA;       &lt;xsl:apply-templates/&gt;&#xD;&#xA;    &lt;/body&gt;&lt;/html&gt;&#xD;&#xA;  &lt;/xsl:template&gt;&#xD;&#xA;&#xD;&#xA;  &lt;xsl:template match=&quot;/ARTICLE/TITLE&quot;&gt;&#xD;&#xA;    &lt;h1 align=&quot;center&quot;&gt; &lt;xsl:apply-templates/&gt; &lt;/h1&gt;&#xD;&#xA;  &lt;/xsl:template&gt;&#xD;&#xA;&#xD;&#xA;  &lt;!-- Top Level Heading --&gt;&#xD;&#xA;  &lt;xsl:template match=&quot;/ARTICLE/SECT&quot;&gt;&#xD;&#xA;      &lt;h2&gt; &lt;xsl:apply-templates select=&quot;text()|B|I|U|DEF|LINK&quot;/&gt; &lt;/h2&gt;&#xD;&#xA;      &lt;xsl:apply-templates select=&quot;SECT|PARA|LIST|NOTE&quot;/&gt;&#xD;&#xA;  &lt;/xsl:template&gt;&#xD;&#xA;    &#xD;&#xA;  &lt;!-- Second-Level Heading --&gt;&#xD;&#xA;  &lt;xsl:template match=&quot;/ARTICLE/SECT/SECT&quot;&gt;&#xD;&#xA;      &lt;h3&gt; &lt;xsl:apply-templates select=&quot;text()|B|I|U|DEF|LINK&quot;/&gt; &lt;/h3&gt;&#xD;&#xA;      &lt;xsl:apply-templates select=&quot;SECT|PARA|LIST|NOTE&quot;/&gt;&#xD;&#xA;  &lt;/xsl:template&gt;&#xD;&#xA;&#xD;&#xA;  &lt;!-- Third-Level Heading --&gt;&#xD;&#xA;  &lt;xsl:template match=&quot;/ARTICLE/SECT/SECT/SECT&quot;&gt;&#xD;&#xA;     &lt;xsl:message terminate=&quot;yes&quot;&gt;Error: Sections can only be nested 2 deep.&lt;/xsl:message&gt;&#xD;&#xA;  &lt;/xsl:template&gt;&#xD;&#xA;&#xD;&#xA;  &lt;!-- Paragraph --&gt;&#xD;&#xA;  &lt;xsl:template match=&quot;PARA&quot;&gt;&#xD;&#xA;      &lt;p&gt;&lt;xsl:apply-templates/&gt;&lt;/p&gt;&#xD;&#xA;  &lt;/xsl:template&gt;&#xD;&#xA;&#xD;&#xA;&lt;/xsl:stylesheet&gt;"
+                             baseType="XML"
+                             description=""
+                             name="xsl"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="XMLTrafoFromFileRepoFiles">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="This tests processing of xml files with DTD and processing-instructions that are rejected by the TWX-native parser (e.g. LoadXML from FileRepository or new XML() from e4x)."
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="XMLTrafoFromFileRepoFiles2">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="This tests processing of xml files with DTD and processing-instructions that are rejected by the TWX-native parser (e.g. LoadXML from FileRepository or new XML() from e4x) and writes the output to the FileRepository as well."
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="XMLTrafoFromFileRepoFilesToFile">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="XMLTrafoXMLInput">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             aspect.PP-db7d83a0-5d2a-43aa-9fe1-7cf52d470dd9="{&quot;defaultValue1646327967300&quot;:&quot;PP-db7d83a0-5d2a-43aa-9fe1-7cf52d470dd9-defaultValue1646327967300&quot;}"
+                             aspect.defaultValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;RESULTS VERSION=&quot;1.0&quot;&gt;&#xD;&#xA;  &lt;RESULTSHEADER&gt;&#xD;&#xA;&#x9;&lt;COUNTRY&gt;&#xD;&#xA;&#x9;  &lt;REGULATION&gt;DEUTSCH&lt;/REGULATION&gt;&#xD;&#xA;&#x9;  &lt;LANGUAGE&gt;DEUTSCH&lt;/LANGUAGE&gt;&#xD;&#xA;&#x9;&lt;/COUNTRY&gt;&#xD;&#xA;&#x9;&lt;CUSTOMER&gt;&#xD;&#xA;&#x9;  &lt;NAME&gt; &lt;/NAME&gt;&#xD;&#xA;&#x9;&lt;/CUSTOMER&gt;&#xD;&#xA;&#x9;&lt;VEHICLE&gt;&#xD;&#xA;&#x9;  &lt;IDENT&gt;&#xD;&#xA;&#x9;&#x9;&lt;!-- vehicle ident information --&gt;&#xD;&#xA;&#x9;&#x9;&lt;REGISTRATION&gt;000284&lt;/REGISTRATION&gt;&#xD;&#xA;&#x9;&#x9;&lt;MANUFACTURER&gt;E.GO&lt;/MANUFACTURER&gt;&#xD;&#xA;&#x9;&#x9;&lt;MODEL&gt;Life&lt;/MODEL&gt;&#xD;&#xA;&#x9;  &lt;/IDENT&gt;&#xD;&#xA;&#x9;  &lt;DATA&gt;&#xD;&#xA;&#x9;&#x9;&lt;ODOMETER/&gt;&#xD;&#xA;&#x9;  &lt;/DATA&gt;&#xD;&#xA;&#x9;&lt;/VEHICLE&gt;&#xD;&#xA;&#x9;&lt;WORKSHOP&gt;&#xD;&#xA;&#x9;  &lt;NAME/&gt;&#xD;&#xA;&#x9;  &lt;ADDRESS/&gt;&#xD;&#xA;&#x9;  &lt;ZIP&gt;_ws_ZIP&lt;/ZIP&gt;&#xD;&#xA;&#x9;  &lt;CITY/&gt;&#xD;&#xA;&#x9;  &lt;TEL/&gt;&#xD;&#xA;&#x9;  &lt;FAX/&gt;&#xD;&#xA;&#x9;&lt;/WORKSHOP&gt;&#xD;&#xA;  &lt;/RESULTSHEADER&gt;&#xD;&#xA;  &lt;RESULT OBJECT=&quot;HEAD_LIGHT&quot;&gt;&#xD;&#xA;&#x9;&lt;TITLE&gt;Scheinwerfer-Einstell-Protokoll&lt;/TITLE&gt;&#xD;&#xA;&#x9;&lt;HEADER&gt;&#xD;&#xA;&#x9;  &lt;EQUIPMENT TYPE=&quot;CONTROL&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;GerÃ&amp;#131;Â¤tebildschirm&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;MANUFACTURER&gt;Beissbarth&lt;/MANUFACTURER&gt;&#xD;&#xA;&#x9;&#x9;&lt;MODEL&gt;ICperform - Headlight&lt;/MODEL&gt;&#xD;&#xA;&#x9;&#x9;&lt;SERIAL_NO&gt;430189431&lt;/SERIAL_NO&gt;&#xD;&#xA;&#x9;&#x9;&lt;HOMOLOGATION_NO&gt;TPN100101161&lt;/HOMOLOGATION_NO&gt;&#xD;&#xA;&#x9;&#x9;&lt;VERSION&gt;ICperform-Headlight 2.3.8.1&lt;/VERSION&gt;&#xD;&#xA;&#x9;  &lt;/EQUIPMENT&gt;&#xD;&#xA;&#x9;  &lt;EQUIPMENT TYPE=&quot;LIGHT&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;GerÃ&amp;#131;Â¤tebildschirm&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;MANUFACTURER&gt;Beissbarth&lt;/MANUFACTURER&gt;&#xD;&#xA;&#x9;&#x9;&lt;MODEL&gt;MLD815&lt;/MODEL&gt;&#xD;&#xA;&#x9;&#x9;&lt;SERIAL_NO&gt;430189431&lt;/SERIAL_NO&gt;&#xD;&#xA;&#x9;&#x9;&lt;HOMOLOGATION_NO&gt;TPN100101161&lt;/HOMOLOGATION_NO&gt;&#xD;&#xA;&#x9;&#x9;&lt;VERSION&gt;BSB42C0_01&lt;/VERSION&gt;&#xD;&#xA;&#x9;&#x9;&lt;CALIBRATION_EXPIRES&gt;04.06.2023&lt;/CALIBRATION_EXPIRES&gt;&#xD;&#xA;&#x9;  &lt;/EQUIPMENT&gt;&#xD;&#xA;&#x9;  &lt;START_TEST&gt;2022-02-28_15.01&lt;/START_TEST&gt;&#xD;&#xA;&#x9;  &lt;END_TEST&gt;2022-02-28_15.03&lt;/END_TEST&gt;&#xD;&#xA;&#x9;  &lt;OPERATOR&gt;&#xD;&#xA;&#x9;&#x9;&lt;NAME&gt;Kein&lt;/NAME&gt;&#xD;&#xA;&#x9;  &lt;/OPERATOR&gt;&#xD;&#xA;&#x9;  &lt;COUNTRY&gt;&#xD;&#xA;&#x9;&#x9;&lt;REGULATION&gt;DEUTSCH&lt;/REGULATION&gt;&#xD;&#xA;&#x9;&#x9;&lt;LANGUAGE&gt;DEUTSCH&lt;/LANGUAGE&gt;&#xD;&#xA;&#x9;  &lt;/COUNTRY&gt;&#xD;&#xA;&#x9;&lt;/HEADER&gt;&#xD;&#xA;&#x9;&lt;SECTION OBJECT=&quot;LOW_BEAM&quot;&gt;&#xD;&#xA;&#x9;  &lt;TITLE&gt;Abblendlicht&lt;/TITLE&gt;&#xD;&#xA;&#x9;  &lt;STEP OBJECT=&quot;VERTICAL_POSITION&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Neigung (gemessen)&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;LEFT&quot; OBJECT=&quot;ALIGNMENT&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Neigung (gemessen) - Links&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;-0.8&quot; LOWLIM1=&quot;-1.2&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;-0.9&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;RIGHT&quot; OBJECT=&quot;ALIGNMENT&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Neigung (gemessen) - Rechts&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;-0.8&quot; LOWLIM1=&quot;-1.2&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;-1.2&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;  &lt;/STEP&gt;&#xD;&#xA;&#x9;  &lt;STEP OBJECT=&quot;HORIZONTAL_POSITION&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Asymmetrisch&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;LEFT&quot; OBJECT=&quot;ALIGNMENT&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Asymmetrisch - Links&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;0.5&quot; LOWLIM1=&quot;-0.5&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;0.1&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;RIGHT&quot; OBJECT=&quot;ALIGNMENT&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Asymmetrisch - Rechts&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;0.5&quot; LOWLIM1=&quot;-0.5&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;0.5&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;  &lt;/STEP&gt;&#xD;&#xA;&#x9;  &lt;MEAS LOC=&quot;LEFT&quot; OBJECT=&quot;ILLUMINANCE&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Abblendlicht_intensity - Links&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;VALUE RESULT=&quot;1&quot; UNIT=&quot;lx&quot;&gt;39&lt;/VALUE&gt;&#xD;&#xA;&#x9;  &lt;/MEAS&gt;&#xD;&#xA;&#x9;  &lt;MEAS LOC=&quot;RIGHT&quot; OBJECT=&quot;ILLUMINANCE&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Abblendlicht_intensity - Rechts&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;VALUE RESULT=&quot;1&quot; UNIT=&quot;lx&quot;&gt;35&lt;/VALUE&gt;&#xD;&#xA;&#x9;  &lt;/MEAS&gt;&#xD;&#xA;&#x9;&lt;/SECTION&gt;&#xD;&#xA;&#x9;&lt;SECTION OBJECT=&quot;HIGH_BEAM&quot;&gt;&#xD;&#xA;&#x9;  &lt;TITLE&gt;Fernlicht&lt;/TITLE&gt;&#xD;&#xA;&#x9;  &lt;STEP OBJECT=&quot;VERTICAL_POSITION&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Vertikale Position&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;LEFT&quot; OBJECT=&quot;ALIGNMENT&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Links&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;2.7&quot; LOWLIM1=&quot;-2.7&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;-1.2&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;RIGHT&quot; OBJECT=&quot;ALIGNMENT&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Rechts&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;2.7&quot; LOWLIM1=&quot;-2.7&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;-0.9&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;  &lt;/STEP&gt;&#xD;&#xA;&#x9;  &lt;STEP OBJECT=&quot;HORIZONTAL_POSITION&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Horizontale Position&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;LEFT&quot; OBJECT=&quot;ALIGNMENT&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Links&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;2.7&quot; LOWLIM1=&quot;-2.7&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;1.0&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;RIGHT&quot; OBJECT=&quot;ALIGNMENT&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Rechts&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;2.7&quot; LOWLIM1=&quot;-2.7&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;0.8&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;  &lt;/STEP&gt;&#xD;&#xA;&#x9;  &lt;MEAS LOC=&quot;LEFT&quot; OBJECT=&quot;ILLUMINANCE&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Fernlicht_intensity - Links&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;VALUE RESULT=&quot;1&quot; UNIT=&quot;lx&quot;&gt;62&lt;/VALUE&gt;&#xD;&#xA;&#x9;  &lt;/MEAS&gt;&#xD;&#xA;&#x9;  &lt;MEAS LOC=&quot;RIGHT&quot; OBJECT=&quot;ILLUMINANCE&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Fernlicht_intensity - Rechts&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;VALUE RESULT=&quot;1&quot; UNIT=&quot;lx&quot;&gt;65&lt;/VALUE&gt;&#xD;&#xA;&#x9;  &lt;/MEAS&gt;&#xD;&#xA;&#x9;&lt;/SECTION&gt;&#xD;&#xA;&#x9;&lt;SECTION OBJECT=&quot;FOG_BEAM&quot;&gt;&#xD;&#xA;&#x9;  &lt;TITLE&gt;Nebellicht&lt;/TITLE&gt;&#xD;&#xA;&#x9;  &lt;STEP OBJECT=&quot;HORIZONTAL_POSITION&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Horizontale Position&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;LEFT&quot; OBJECT=&quot;ANGLE&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Neigung (gemessen) - Links&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;-1.5&quot; LOWLIM1=&quot;-2.5&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;-2.5&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;&#x9;&lt;MEAS LOC=&quot;RIGHT&quot; OBJECT=&quot;ANGLE&quot;&gt;&#xD;&#xA;&#x9;&#x9;  &lt;TITLE&gt;Neigung (gemessen) - Rechts&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;  &lt;VALUE HIGHLIM1=&quot;-1.5&quot; LOWLIM1=&quot;-2.5&quot; RESULT=&quot;1&quot; UNIT=&quot;%&quot;&gt;-2.3&lt;/VALUE&gt;&#xD;&#xA;&#x9;&#x9;&lt;/MEAS&gt;&#xD;&#xA;&#x9;  &lt;/STEP&gt;&#xD;&#xA;&#x9;  &lt;MEAS LOC=&quot;LEFT&quot; OBJECT=&quot;ILLUMINANCE&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Nebellicht_intensity - Links&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;VALUE RESULT=&quot;1&quot; UNIT=&quot;lx&quot;&gt;13&lt;/VALUE&gt;&#xD;&#xA;&#x9;  &lt;/MEAS&gt;&#xD;&#xA;&#x9;  &lt;MEAS LOC=&quot;RIGHT&quot; OBJECT=&quot;ILLUMINANCE&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Nebellicht_intensity - Rechts&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;VALUE RESULT=&quot;1&quot; UNIT=&quot;lx&quot;&gt;13&lt;/VALUE&gt;&#xD;&#xA;&#x9;  &lt;/MEAS&gt;&#xD;&#xA;&#x9;&lt;/SECTION&gt;&#xD;&#xA;&#x9;&lt;SUMMARY&gt;&#xD;&#xA;&#x9;  &lt;TITLE&gt;Testergebnisse&lt;/TITLE&gt;&#xD;&#xA;&#x9;  &lt;MEAS OBJECT=&quot;HEAD_LIGHT&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;TITLE&gt;Scheinwerfer-Einstell-Protokoll&lt;/TITLE&gt;&#xD;&#xA;&#x9;&#x9;&lt;VALUE RESULT=&quot;1&quot;&gt;OK&lt;/VALUE&gt;&#xD;&#xA;&#x9;  &lt;/MEAS&gt;&#xD;&#xA;&#x9;&lt;/SUMMARY&gt;&#xD;&#xA;  &lt;/RESULT&gt;&#xD;&#xA;&lt;/RESULTS&gt;"
+                             baseType="XML"
+                             description=""
+                             name="xml"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="Pack">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var zip = Things["SystemRepository"].LoadBinary({
+                                        	path: '/cpq/cpq.zip' /* STRING */
+                                        });
+                                        me.zipWithXSLContent = zip;
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="Setup">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = "No Processing";
+                                        if(!Things["SystemRepository"].ListDirectories({path: '/'}).Find({name: 'cpq'})){
+                                            Things["SystemRepository"].SaveBinary({
+                                                path: '/cpq/cpq.zip' /* STRING */,
+                                                content: me.zipWithXSLContent/* BLOB */
+                                            });
+                                            Things["SystemRepository"].ExtractZipArchive({
+                                                zipFileName: '/cpq/cpq.zip' /* STRING */,
+                                                path: '/cpq' /* STRING */
+                                            });
+                                            result = "Did Processing";
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="TestWithXSLfromInput">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var params = {
+                                        	XSL: xsl /* XML */,
+                                        	XML: xml /* XML */
+                                        };
+                                        
+                                        // result: STRING
+                                        var result = Resources["XSLTrafoResource"].XSLTransformXML(params);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="XMLTrafoFromFileRepoFiles">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        //remove the f.. DOCTYPE from the XML file
+                                        var xmldtd = Things["SystemRepository"].LoadText({
+                                        	path: '/cpq/response.xml' /* STRING */
+                                        });
+                                        //replace lines defined by exact match
+                                        //var xmlWOdtd = xmldtd.replace('<!DOCTYPE RESULTS SYSTEM "awnres.dtd">','').replace('<!-- light test -->','').replace('<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>','').trim();
+                                        //alternative: skip first 3 lines
+                                        xmldtd = xmldtd.split('\n').slice(3).join('\n').trim();
+                                        //var result = xmlWOdtd;
+                                        var xml2 = new XML(xmldtd);
+                                        //var result = xml2;
+                                        let params = {
+                                        	XSL: undefined /* XML */,
+                                        	XML: xml2 /* XML */,
+                                        	FileRepo: 'SystemRepository' /* THINGNAME */,
+                                        	XSLPath: '/cpq/generic.xsl' /* STRING */
+                                        };
+                                        
+                                        // result: STRING
+                                        let result = Resources["XSLTrafoResource"].XSLTransformXML(params);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="XMLTrafoFromFileRepoFiles2">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        let params = {
+                                        	FileRepo: 'SystemRepository' /* THINGNAME */,
+                                        	XMLPath:'/cpq/response2.xml',
+                                        	XSLPath: '/cpq/generic.xsl' /* STRING */
+                                        };
+                                        
+                                        // result: STRING
+                                        let result = Resources["XSLTrafoResource"].XSLTransformXML(params);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="XMLTrafoFromFileRepoFilesToFile">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        let result = Resources["XSLTrafoResource"].XSLTransformXML({
+                                        	XML: undefined /* XML */,
+                                        	FileRepo: 'SystemRepository' /* THINGNAME */,
+                                        	XMLPath:'/cpq/response2.xml',
+                                        	XSLPath: '/cpq/generic.xsl' /* STRING */,
+                                        	XSL: undefined /* XML */,
+                                        	ResultPath: '/cpq/result.html' /* STRING */
+                                        });
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="XMLTrafoXMLInput">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        let params = {
+                                        	XSL: undefined /* XML */,
+                                        	XML: xml /* XML */,
+                                        	FileRepo: 'SystemRepository' /* THINGNAME */,
+                                        	XSLPath: '/cpq/generic.xsl' /* STRING */
+                                        };
+                                        
+                                        // result: STRING
+                                        let result = Resources["XSLTrafoResource"].XSLTransformXML(params);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions>
+                    <Subscription
+                     description=""
+                     enabled="false"
+                     eventName="ThingStart"
+                     name="OnDeploy"
+                     source=""
+                     sourceProperty=""
+                     sourceType="Thing">
+                        <ServiceImplementation
+                         description=""
+                         handlerName="Script"
+                         name="OnDeploy">
+                            <ConfigurationTables>
+                                <ConfigurationTable
+                                 description=""
+                                 isMultiRow="false"
+                                 name="Script"
+                                 ordinal="0">
+                                    <DataShape>
+                                        <FieldDefinitions>
+                                            <FieldDefinition
+                                             baseType="STRING"
+                                             description="code"
+                                             name="code"
+                                             ordinal="0"></FieldDefinition>
+                                        </FieldDefinitions>
+                                    </DataShape>
+                                    <Rows>
+                                        <Row>
+                                            <code>
+                                            <![CDATA[
+                                            me.Setup();
+                                            ]]>
+                                            </code>
+                                        </Row>
+                                    </Rows>
+                                </ConfigurationTable>
+                            </ConfigurationTables>
+                        </ServiceImplementation>
+                    </Subscription>
+                </Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="zipWithXSLContent"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <zipWithXSLContent>
+                    <Value>UEsDBAoAAAAAAMNaZFScA8KULQAAAC0AAAAKAAAAYXducmVzLmR0ZDw/eG1sIHZlcnNpb249IjEu
+MCIgZW5jb2Rpbmc9IklTTy04ODU5LTEiPz4NClBLAwQUAAAAAACNlmNUAAAAAAAAAAAAAAAABwAA
+AGNvbmZpZy9QSwMEFAAAAAgAjZZjVD+Oeo5lAQAA9gMAABIAAABjb25maWcvYWRkcmVzcy54c2y1
+kt1qwkAQha9b8B2me9VaYhJ/iopGxFpbkLaoF71ddWKWbnbD7mri0/ZVuiFFSxGqoHOzMHxnZs9h
+Or0s5rBBpZkUXeJXPAIoFnLJxKpLXqZvTrPZaDk+6QWl606meVubLUcdIZo/MjtI6LZFuiQyJmm7
+bpqmlbRWkWrl+q1Wy/2Yjt2ZokKHUsU/gkPwbOJOhgMnMjGve8QuvurcOE75TFW6BlsjLueUA10u
+FWoNCylCtloraqwhsP8DqqlAk0r1CXvLuhAPZLJVbBUZ6Gfy1SYxlaFJqUIYxfNnyM06Vc+rFXT5
+TOU4l4niEUMmcBeFDCF3rSOZwO06ASOhDtwSeSw76h6SSAq0b0izu4sYza9tQxWjc44gaIxd0i+2
++yTAykh23N/IP5oqCQRmBnIhxHLOLDAdnjSiRoIx4wyFNop+IfgnqeskaFS9hyb06SJCcZz2PQ+Z
+BMfBTzQ7gBaN/Q3b1jdQSwMEFAAAAAgAjZZjVCUqA6sGAgAA4AgAABkAAABjb25maWcvY29uZmln
+LmdlbmVyaWMueHNsvZZRb9owEMefN2nfwfPeKoWErd0KAqoWaDeNUilQda8uuSTWEl9kXwh8+12g
+3dBWTUQq+C32/Xy5+/+VS+9ilWdiCdZpNH3ZbgVSgFlgpE3Sl99md975+VnHa8uLwbu3vZXLuo7W
+GbgUgP7C+CLjuhzSlylR0fX9qqpa1acW2sRvdzod/8ds4s+tMi5Gmz8BLwXPQz8cD72U8uw0kJxY
+8Oq997yTV1rbG4doYp2UVhEXIfidhHLKAFVof4qdMmUCBqxeyGesWFudpCQuVzjl8xnGVCkL4iZ/
+/CrqSr2PQXC6jT55peV5B+vDCGJtQFQ6olRgLJbKaiydIPXILThUGbWX6kx1EmFUDn05xKzMjZOD
+zz1/9/g/yFxTBg9ywA3fm7k3mhj5crY3cQvKNSNCeAk4tIQOcxDPyZwoHUQbXy92nV5LjCUVJW3Z
+KRJ061jR3gSTLUEoE4lg8xirzMERTXATjsdTOfgQBOdBA1HD8Yih6+ugCXTvoJaWfYdWDtpNuBB+
+Y0fS+CFVJLQTkXZFptYQHVGUWYrV2CTssSFG0KRVNfn96rIpMiMoXFPorgC2eDMpa24ES71oXNUc
+i4k2jO3vtxq7QiLMmWyckOcVWcymyCmP4Lk3Tx+VCSZ4RKtxOi7Qn6f8B8KTeOXfQqTV2JAmDc5X
+lck4opXo+J8ebDf+TG7e+gVQSwMEFAAAAAgAjZZjVNfnylYDBgAAJxYAABoAAABjb25maWcvbGFu
+Z3VhZ2UuZ2VybWFuLnhzbK1Y227TQBB9R+IfFiNxE3HiUC7lYuQ6brGS2iVxwk0o2sQTZ6m9jtbr
+puSHeOWPeOEzeGDWTig3IW9FWjmOvefM7OzsXPbp8/MsJWcgCpbzZ4ZldgwCfJ7HjCfPDH8Uth49
+ur/fsozn9tUrT8+L9HEhP6ZQLAHkbzAk4sVjHPLMWEq5etxur9drc33PzEXStvb399uvR4N2JCgv
+FrnItoC/DY6G7aHntpYyS/c6Bgom+Hl6rdW6858+NeOA8qSkCZAYVsBj/CcSziVB7QgtKAe5zsUp
+uZhwUePcfPVRsGQpiXOeB2iHUb6QayqAHGWzF0RNtdXtWA/r0fW1B6Us5ksgk9pmdwmn8yVJtyqY
+aDZymq8YCOA1wnpodvbNbqdjERrHEJPwoEeKcrXKhaxHdB+YnT01Ym874kTkMp/nqZexQgnZDntk
+Wh017P522Og47HtTpNsKum92uur9w+37I2c0PfD73g7+2+s+fESV0FjzJWr/F7FWu1tDEWdV0P0t
+dOgd+aNo6ER+GEx7TuTtNKjHWQ92GoJgNK2EHJUshpRx2FLuhm612VqkXrSZoKdApCjnpwqLd3k5
+S4GgO+MlpcV2Ae/8p0+rtfXNamOcUVRaieM0g2fGCZvLUoBhA0MrzUBKkFCQA5bGd4nDN8ASqJ1g
+vEoERQ1puSAnw3DnIk/bP7P+Q9LO/oZd3Z3maaqN/bF2hh2gTmtgRa1cIExyz7TUH+4TgZqnastM
+fN8nIzl5G15aVFfp+20xA7UvGGdJyRPizBJalFyiCcr5Ep/UWnzae0hrcTiiQI0aS+1Blhv2HaK+
+yR3SGHcMtBhCUabSsI/hCwhcQ86KS+CtXwjIJBdoR5xUAZcg6/5K9oJxqUs25gzn5DGOVpeNUceM
+GzZezOYIem7YeNFA4DRxy8SGfQQZFAU03wO7pfJ012kX7AzbGfe1UVN3MHWdyBm8GUUVAzlq9Wlz
+qyqe8GeKsTb8Fw0uIf2g9xMef+kyGHa+5EB0UFUCMuwegwKah6o6bUXj4UFo2FEpZnnrUgw4x51s
+kjGp8mpjhmrdB05lakwnMv/SGOr3Bt50dOJ5KH0AIFIM97HYNMa74yg8PNwxODMBCaQ6BI7reoNp
+5B+j6Q9U0E3N1ludEBCeOK4fvUHji28zDM2Ngc7rgdpfWlHq5dh3+4Y9mqNzaeSzUeQEPWfYQ6TE
+EoCKuDH02AnGh46LDuYNlZld/9B3DXuJqUiiCvi1gg1bMLRcY060ud/zgmg68V74rrLCmC9omi7o
+UmygbG7Cw3A8fIWzmmCFiMVCCvwURGN0z4scf1D5TVksvi1FyjQmIVaZYVvtjDUPxzEkaLrPrhZg
+hIj+mrw7C6P3OkCE6Qx/0EFA+2ZjyNAbjQdRCpjHmRk2z2Y1LlH5n5tayB6csTmoLCi+Nt+e27LR
+sHXrRzcMoiFmoQDjaj/nUmABycssA/Gj+Jo9vgRb94KuFYjmDFgDR6FbUexKWl2KHpVoP7yWWWNM
+eOJhZxIO67JUY3ftgN1qeyWgNhg2xzlvru+IJZzW7cK4Kn7nS8EWzdceg122UjEPspVGQkTjYuuR
+VTXlqr5vbq8JLNk8RY0PdYOZW2LmRPdC/yh53DwnqM6zSgnpNywOdz66KYlF2uQQsyGx9kxLh677
+V7rujq6rx3bvr2z3Lti6jdm84MgPPDfsebg4uAPEPNcw1BASVkhBZRUPnEyqeA8Ftu4cG0+816is
+J4xfLHHLx2MS2QpwcjobJMbVltV6s7S+LTA7N0/N3vkKT0q20/FE+rVECqxANKbxAuUZ9nWivlVH
+TmfNzTlgmWqZsHPTgvnYaOExhupqUGslkydFS52aqeZGp4A6ZLzmqSLM5Xkiiu2RxLBI0VMxpq5B
+SCC3MmzSbly3HnSe9NhioY6gNvXPlLUF3G5M/wZQwQ+08fggx9QIGmXFECrtVG48gI1GxPnj4Em5
+USE3ZUr1LBjkmVqLeGdCdafhhfXBFiKD5rnhxwmY6huYXNBYQ6Cb8wVDP4mduWRnSIHHLfKrZIkk
+pUnoKT78g6t+cHHsiY++A1BLAwQUAAAACACNlmNU1+fKVgMGAAAnFgAAEwAAAGNvbmZpZy9sYW5n
+dWFnZS54c2ytWNtu00AQfUfiHxYjcRNx4lAu5WLkOm6xktolccJNKNrEE2epvY7W66bkh3jlj3jh
+M3hg1k4oNyFvRVo5jr3nzOzs7Fz26fPzLCVnIAqW82eGZXYMAnyex4wnzwx/FLYePbq/37KM5/bV
+K0/Pi/RxIT+mUCwB5G8wJOLFYxzyzFhKuXrcbq/Xa3N9z8xF0rb29/fbr0eDdiQoLxa5yLaAvw2O
+hu2h57aWMkv3OgYKJvh5eq3VuvOfPjXjgPKkpAmQGFbAY/wnEs4lQe0ILSgHuc7FKbmYcFHj3Hz1
+UbBkKYlzngdoh1G+kGsqgBxlsxdETbXV7VgP69H1tQelLOZLIJPaZncJp/MlSbcqmGg2cpqvGAjg
+NcJ6aHb2zW6nYxEaxxCT8KBHinK1yoWsR3QfmJ09NWJvO+JE5DKf56mXsUIJ2Q57ZFodNez+dtjo
+OOx7U6TbCrpvdrrq/cPt+yNnND3w+94O/tvrPnxEldBY8yVq/xexVrtbQxFnVdD9LXToHfmjaOhE
+fhhMe07k7TSox1kPdhqCYDSthByVLIaUcdhS7oZutdlapF60maCnQKQo56cKi3d5OUuBoDvjJaXF
+dgHv/KdPq7X1zWpjnFFUWonjNINnxgmby1KAYQNDK81ASpBQkAOWxneJwzfAEqidYLxKBEUNabkg
+J8Nw5yJP2z+z/kPSzv6GXd2d5mmqjf2xdoYdoE5rYEWtXCBMcs+01B/uE4Gap2rLTHzfJyM5eRte
+WlRX6fttMQO1LxhnSckT4swSWpRcognK+RKf1Fp82ntIa3E4okCNGkvtQZYb9h2ivskd0hh3DLQY
+QlGm0rCP4QsIXEPOikvgrV8IyCQXaEecVAGXIOv+SvaCcalLNuYM5+QxjlaXjVHHjBs2XszmCHpu
+2HjRQOA0ccvEhn0EGRQFNN8Du6XydNdpF+wM2xn3tVFTdzB1ncgZvBlFFQM5avVpc6sqnvBnirE2
+/BcNLiH9oPcTHn/pMhh2vuRAdFBVAjLsHoMCmoeqOm1F4+FBaNhRKWZ561IMOMedbJIxqfJqY4Zq
+3QdOZWpMJzL/0hjq9wbedHTieSh9ACBSDPex2DTGu+MoPDzcMTgzAQmkOgSO63qDaeQfo+kPVNBN
+zdZbnRAQnjiuH71B44tvMwzNjYHO64HaX1pR6uXYd/uGPZqjc2nks1HkBD1n2EOkxBKAirgx9NgJ
+xoeOiw7mDZWZXf/Qdw17ialIogr4tYINWzC0XGNOtLnf84JoOvFe+K6ywpgvaJou6FJsoGxuwsNw
+PHyFs5pghYjFQgr8FERjdM+LHH9Q+U1ZLL4tRco0JiFWmWFb7Yw1D8cxJGi6z64WYISI/pq8Owuj
+9zpAhOkMf9BBQPtmY8jQG40HUQqYx5kZNs9mNS5R+Z+bWsgenLE5qCwovjbfntuy0bB160c3DKIh
+ZqEA42o/51JgAcnLLAPxo/iaPb4EW/eCrhWI5gxYA0ehW1HsSlpdih6VaD+8llljTHjiYWcSDuuy
+VGN37YDdansloDYYNsc5b67viCWc1u3CuCp+50vBFs3XHoNdtlIxD7KVRkJE42LrkVU15aq+b26v
+CSzZPEWND3WDmVti5kT3Qv8oedw8J6jOs0oJ6TcsDnc+uimJRdrkELMhsfZMS4eu+1e67o6uq8d2
+769s9y7Yuo3ZvODIDzw37Hm4OLgDxDzXMNQQElZIQWUVD5xMqngPBbbuHBtPvNeorCeMXyxxy8dj
+EtkKcHI6GyTG1ZbVerO0vi0wOzdPzd75Ck9KttPxRPq1RAqsQDSm8QLlGfZ1or5VR05nzc05YJlq
+mbBz04L52GjhMYbqalBrJZMnRUudmqnmRqeAOmS85qkizOV5IortkcSwSNFTMaauQUggtzJs0m5c
+tx50nvTYYqGOoDb1z5S1BdxuTP8GUMEPtPH4IMfUCBplxRAq7VRuPICNRsT54+BJuVEhN2VK9SwY
+5Jlai3hnQnWn4YX1wRYig+a54ccJmOobmFzQWEOgm/MFQz+JnblkZ0iBxy3yq2SJJKVJ6Ck+/IOr
+fnBx7ImPvgNQSwMEFAAAAAgAjZZjVA+va1a1BQAAuB4AAAsAAABnZW5lcmljLnhzbO1Ze2/TMBD/
+H4nvYALipaVpy3NAgdEFmNSuqA0vIYTc5NpEOHFku+vK47tzdtJmrKyP0LEhqLRHnLvzPX53Z18f
+PTmMGTkAISOeNKxapWoRSHweRMmwYe31Ovb9+3e27Zr15PHFC48OJXsg1YSBDAHUMTYUlMgHSNKw
+QqXSB44zHo8r41sVLoZObXt723nXazmeoIkccBHnDL8i9rpO123aoYrZ7aqFGxP8mM35SKUjRWJQ
+IQ+QFSksEiUBJKphJdxypsSXbPvmhj4XL2iZVNIE1JiLz+SIB4aQgIj8CupGgkimjE4koYyR65du
+kIAqqlmbPJ2IaBgqsnPI95GrxwdqTAWQF3H/JdGusevV2m1Nq3/q9yrVu5V6tVonuG8QQEDkKE25
+UAQdR1qd5idvz2u5hna7Ur2taW/PaCnxeTKIhkSCrzA8hknxlNAkIH2uFI8JixIw7Hcy9hqya735
+mDA+5JKMIxWSmAvA/wIVatqbG/xkPt1LfDYKAPWNY9Sz8KvUuuZmjATVVly8sEkdbPsoqqJcj1DA
+oGFl2zrZn8qRCFvOUiaMgAApV6RmNBmO6BCWkedPjoZ7CDRYlX6kIjZPe0BFRPsMSEJjaFg7hwxO
+JW/yIL8S3EeXEMG5IsAgxlzFbEIkBhPCB+Sl126RLK8fmGwRQBUgirWlIDIkolNHTCEgA9DQMCDd
+0gkGWyT3uZal01OGPN0yeXQAYeQzMHlouHgKCCYuKsQLIdGMGvOZ8BxzKgRMtjhGH4GsaCmnBzsF
+ccq0rTFVftiwsOj1Xre83rTiGULtpvx5tqZM+PpcoH8aFpZeHxhLaaCL9uxZptQ3zzXrGH+BmgFR
+ILFyXumFfOzxtIVlgTTIHEexs8jf/Pqtzlm9MbaEr1eanI3iRH6fCjuRLRRERl8QinXLWSTeUcFJ
+ejlGsfnlzEp8tbol2grKoiHawGCgrF+YhKX+gNSNYScbVT/2dnEEstB/eNru7LqNa7tuu3Pt41T+
+UikHlI3ARvxLzC9fx3MXYj7nzDXcs8IWmNeKo2+Wb9MXS0nmt5j5xDG9bgkyjLfXBU0RaN2dF0Ya
+q9c4e1VfGPUoxrYrfC2hhSXqu+Wsp5cG8tpoLQdQ7XKapmxiT+uQPOb5D7WPzkt3Z9ftOu7+7ifP
+7Xloz9XLtbvVh0d/X7xQXnCzs+91O61P+52Ni37V7XidppF9RmEwAfidsremeto9Pna0qXdmLT7r
+kGab38JBWQm9PCRv3Jd7zZb7u2K67vOyIqbg6LxyuzteZ96i6SmIZE0Wy1EMVI6EObfMjgq2/RfC
+Y4F64U8tLzvza029SDF4u7yQzLeHNnqta7y1SP1wbY1eJ5EqpRAy/q4qpk0UuhgbS+nSjpJzowo9
+PDeqZIkWbFifLpRTpxx6SyTfeagNK1TOntv09jr7J1ZMfZ+azhzyO9TE3KliGhULtl12+9ft9k73
+/fqFP2dcrDccIldiJg36cjrAyyoIVHadNutqGTqzV7tvPTOjmH/jyoXUup3iarGS32wLrqk7T2EW
+8fMoIkfykWlDAuOs4euDfjZyULr1kevatWZK4Ge+RaT4kCqSVYcbFTPHGkxFkhDBkwOO4NiNJ2yC
+v4C03Z1ePuXAGUMkcWiZS9QCXDGEfoKrwCTkZHpTw6bl9Dz31VY2sDCzO0IVjmmD0xyKHZ9OTNM/
+pymwuRyPxCa1X2LyUR8XVy/JJ98EHzlG0jx0F1341tdoWYkxAyp83Nt/UVbRPK9W2laj45uGxrdZ
+jTujhEIdNppNKO80UunhGacQmvU/f85X/kx3KY4DgaBjQjW0khwoAzwLZJNhBSkeCkqE0ITv5DZc
+s5zNmfWni4EWeLQaaLfqpMz12MpSV4ZYCwwkMWMH2XdLKqSJyek/O2jPFSuTimechjMYzOO1z1lw
+HK/FoXtV7GQpsTHHFOfMNQA+h9dsofh6EJd+AFBLAwQUAAAAAACNlmNUAAAAAAAAAAAAAAAACAAA
+AGluY2x1ZGUvUEsDBBQAAAAIAI2WY1TYW0WkMAIAAGcFAAAUAAAAaW5jbHVkZS9odG1saGVhZC54
+c2ytVFFv2jAQfq/U/3DLY2UTaGkFlLSqGBqV2CYVHvZqkgux5tiZfRDYtP8+J6EC1pYn7sl3+fzd
+fb5PGT5ucgVrtE4aHQWdVjsA1LFJpF5GwfPsO+/1bvu8Ezw+XF4MN04NHG0VugyR/rvmibQbeEgU
+ZETFIAzLsmyVNy1jl2Gn3++HP2bTcG6Fdqmx+e7Ce+D5S/gyHvGMctVtB74xwPAT51dnisuLinEy
+/zqdjJ8+t/xUDGKT50aDI2EJ/HgglIK9VNfcGZlia+UyI3jamG/+BWYmpVJYhC/5YgKVSH7dbt80
+6KszRsM4q8crrInROb8hKCVlQBmCNYZAmwQHEFsUhLU+SEy8ylFTA6zkgtBJRTV/nk/HDESSgDM5
+NlpB6tTAqqYezWasotav/eoniTOpkrqRO69Izus91xYjzAtVacgFxVkUhI0H/NfKEvW5yVAkdbbL
+cyQBlZ04/lrJdRSMjCavns+3BQYQN1kUEG4orKjuvR5hHVK0opT3gvCQjSQpfBBOaKTS2J/DsK4c
+QppHI8++I42da2Z9G5MO/EmNH8bJ3zjo9Aq6//sB8voQCZ27E9CbY2j3BLR7DL0+Ab09hrZPQO+O
+oCdULUyyZVCwlWJGMSVZIteMEkYZ8ya03mBMm4VlCyZ3BG/jqFff94I6T0Uu1XYAwkqhGGSo1kgy
+Fgz88hx3aGX63ljDsF7g3lDhgaN2XhRFobb81ZGuckgD3VmxOh561peawv7n4Uv/AFBLAwQUAAAA
+CACNlmNUYXjGs2MRAAC1gwAAEAAAAGluY2x1ZGUvdXRpbC54c2ztHWtz2kbwczrT/3ChnhrSgIA8
+2rghDQbZpuHhAnaTdjIeGQ6jqZCoJPzo4793904vQEInHsKdlsnEIPZ29/Z29/b29o63P9xPNHJL
+TUs19EqmVChmCNUHxlDVbyqZRq+T/+67V2/ypcwP77784u29pR1Z9oNGrTGl9kIzQKRbRwBSyYxt
+e3okSXd3d4W7FwXDvJFKb968kT72mlLfVHRrZJgTp0EYcL8rdeVafmxPtJfFDBB+8vZpPv9sO68v
+v/jyC0Iu+o1mAfghA2MyMXT4M6RkZtEhuX4giqYRv5sWb1Ezpg+mejO2SfXeaEPve8bIvlNMSk4n
+12cEO5gvF0vfcujSt4Xim0K5WCwReCnDIWDuHNeJNZtODdNGkHK5UCp6ICfqPYBMTeNaoxOijshQ
+sRUyNKilH9rAjWLa5E61x0S51ygpkayqk5mtagUQeM5Dt0Dx5073Q++scz5HFjh7jXBlH67ZqV31
+G/2m7AISwkBfF4ovEfQlgk5AKUYqQNP7qaboig1DbyFYESiXEew7H2NXPm30+t1qv9FpX9WrfdkB
+hH8gpFceoEcQVII0qWqPlCHVySsmw1ccb+l1OLhFTVXRiD6bXFOT4XcbfBve4NpUfqNXtjkb/EYU
+fUhs05iBuPngDzTFYt15tr0XouOiPDeNAbUsoti2qV7PbEpacv+sUz8ixsyezmwypNbAVKcoVGKM
+iE0tm0yoPTaGHMk2Ocvn0aaYNdt0AoMJ7EwUezCuZN5ztpjRcYjB2DAsip+dB3djqjP+KplC5fC0
+2rs6bnyQD1kTF+ZW0WY0D/2wqEYHAHngwmUkB5Xk4opFfVVrXtWq/WrzU68vSibYJiHJTjJqnbUJ
+JezWBj06rieiBPBrkhLAngBhr9WJVywASqRVDP6qf9E97gih5qCJCYAMxdADYALkP100ah/iEDOg
+BEh7/Wq7Xu3GM8zhkvDbqrYvTqo1kKHcveqdy7XGSaMWRye0UQKi1VqtUZfb/atL+axRa8aq0AJ8
+Em066Vx0f44VHINKIra63K82mnIsYgduNWrDHlPzTrXoSlwFH8diI+eZPxWwz/7ksZMIbXnGvGg3
++t58OdNVCIvGhj2YQViT1uyILAjOjQNDtxVVt7IW8K/fZAu55+Tw9cvDXEaKHPbS4YovzekkTh0A
+JIGSDelNrCkCTBLLQ/DYSQCBkkwDAC+AMhnC10UBlK+L/wm76sq9i6ZrWcyoTLQqDENNas00+zkx
+WGCqaLBEwnBZM8z0bI6xJ2p1MLrFw1UWNj/s6sj56uDCol1q1bBrpEJKDIqBjcCOeZcrmT8PTruy
+3P6bf7tCeTjPGi05rLDhR0wucYlTF+GFrYCTEXPRC1rEu43F0pXrokK5sVMUyo2dSCiecUr7ts4z
+uVqXu0ekw23SVnCdCv2jv8/U6YTq6c15nBMU99KQ9MbGXZ3eqgMa0I23tolv2Lshaog1VXTQEVhr
+68PsAQzgbKJbZKjekhe5v/1hvI5TH04pqDvX3sjaQxGaz8prkL3kSa4VdPk7M6BHkGzIU2Uw9rBI
+kgxB+XkLgsw5Q1OmU+0h74rcCp80fHzwzNfjlDWy1mn3u7DYbXeOUtM9n2YG00+0kpEnqoXDEamP
+NfAnpqG1jSiVFB95n3oipfPULU9Kf2cgmajewGONjmzGjkCksKBYaY96RMKqB4uYmnwEMQGQBZM/
+PIPV4CFPSn715RepZag4H2EKUCAVhyv8lgReX/kf9yVIuV2/6su9fnqScimiMKK9KjQAvfv6q9Lr
+4veRepm2sM67nX6nxmwvPXkFiK4UWQDu8UmOOa2UBcdoxsvNBys/Prl1zmXYreh0n+O+AQGS9gOx
+puDncKcA918mU8kCT67YM9jygX0QbZiegF3mhGfBzpSaim2Ym0+CLul0psB2tSWLzoLYI3Lr4L42
+bNuYIHaHmTGFvTrACBuIq4PQMo8GfWmsSoC6ChDgkbXxmRUIexNRRMWLpMYlsz9TcTIGujJhZuJs
+xe3BLpLYgQ/lKBx5CmHDIQGozjk4J/6RQftmE7u24AuL+EWwy3LZGVRnMIVoPCNlUTqeIZHAi7vc
++WfhzZkgljl0TDFONC7DQS6vzVXYfMtOO9gNKnZXPvF02lZtjT4HRdNnI2WANm8+Z95X4xOCs/nv
+1kCktiQCHlGqrvTjZR/rYrp0RE2o+aACbgapCno5R0mjCbOCA0YzSj9D2/lhrZTI84LxiPE1H9+t
+BA2LBCWxXgSjoRgqwXVoCuPiu6g1BsdtK6ED2tUIeUTgb6vR60GNidSoQ6ZvP5Nj0IV4aZ5H70j8
+hNS2FYgZdkyEH9zijQPt1OXmllTJm/f5plxeo/qNPc5eyl1Uohx5R0oxEaoD6vEskLqep9WTu40q
+GvM8ta+/elP6PioIZIVOQDLC6DyUjKs3LxaYCreK1VzWofzjqis35WpPBkY3zu6Gd6xtTFTYVcJS
+N2A9YTKXlAXJBPoivLhI0WXULnr9Tkv2w2l0nam5AZf6Bl4gcr0/s2BNRs0t2W5ojPsYfL5TNeKO
+n1PZhzWcU9g/hb0a5uhv6VgdwCYOqzRhT1AvUxtnh0k3g3DcrX6QkwaS5pbDj7jI9JKJbP3FtrAm
+sTGRgnOSF/pErZ/i11AOUn/2WhZc9C6QjyGVVNi/Vp23p8Fzk6Ek8f1jyamH5TmBDefA2FwbjMCN
+qWAJz5FAki1e2ZdI+lvZ7OVXAkR0mxeFBzsfyX9ka896Qzbdn0SV0sRukC7SWqSyjHJ5O/9JXKjm
+Ezlt5t4VAxJwXEE2qsx1pkJ8r+pxOytBAgCa8znlXAluObM3ImkYMADB+Od/j75rj74aEJ1p6p5/
+3qdjVJ6aP2ckI9O4H46rlfD8reys/2swKBu653CN/UAfSuiQN3LDy6gXWY82S98uQ/PXnat/sQiA
++3WlsO0elnfTww/yJ8C8hvNeuyMvdtaRF6KL5zATlvUbmA9ruPjYTS5Bbp822jKq0W4E4OEXziEs
+iCF4JG6D1XZkFv9GheiFncpDAWx7Qg1yvzD5iXW/3elfcSQyVIv++wQwz38SEayqV75stEu72mq8
+VJkgdrjLCNwzQQgE7AAqOaVba+8rRshBEoJO1q1SLJO+cvMWZY7V5z+eJa8DYuCLPYjpgj/v+H1w
+OyFScQ0oXjy2Pr1I2iexgxsJFU7Q8HZucQuaKX7MJDjSfBuzflFDz44ntUPjbN2ws4WChMsSaels
+d25XHmyJ0q7EOi8BIQnvt1TBWaqlm3RDYmFrtMVh2s0yZJHKjuK8RTIJwr0tRjOdIeyc2NTcRSTT
+qcOGD0Qx+9w7aUPJ2JB4CjaAKzfgM5xzwPJLEzScZZ/TONqJxWuVTJVTZYJjvcWTbvwOjpFpTMjH
+VpNA62Xdz2YHMAx21snk9dy//NiM5N7AkcMKtBzLk2fnkoxxDbGQgu3AFnO5Dc0qLv8swkmiMtBI
+BfVrQtmNKttlsSx8VGdPcqzW6/BNb+ei7FOtcETW47EvNx+7GH9pnG9Q4RiHvdbof9r5CJ0o9+sO
+0En146YDFLI/MIZbddQ/wB+WxWc911mO2A1GvstU9YE2G8Ijx6MXoBHJDukI8kBD+JbcqvSOmrmN
+/WoxB7W767nVSgpu9cCZW0o7VycxPvbuH11GXuxcIMwDRm22jg2dPhZRvNy5KNDVRPAAX20qh624
+khTCTnf51IJasCMyGNPBbyzovKw2L2TS/3Quw90rjd75IYvUWC4LemmaICgOg0gU7U55sPyLu+Ca
+Dw1uDkvtji5kXvA6BO5DGee/vg907zOLKIWOIoc0Tn4rxkrkj+iCjCfLSqKCpcC8olH2GW7kw/v4
+BiZlawd6R0zjDkpldFAU1AZj5iiKM+8gPqpZlC8n6EiB6zTIlBFArGlrjVP91Wu0T5tyuA4xgXLT
+wL7fUTJWbinrIfzHpcAO/WJX2WARSImfWzCNR+sgSx5hS7YOYsblPcbW8DiJOvqZ5ARN+IAk010Q
+RXDkoI8iBB/TlS/z1w8yUeCwgjnDX4tAXo+gUZOs08VciiqJ3IQf5C5I7zvHP8q1fuWw0aqeyqGl
+VyvyOByHX3+0PJ26E+WA6phmiTy8OEcE0xT5hcxB3WhMlBsqOslF9vSpcFdDGuPBdzgjcnHclK9g
+i9JFstzkfa1Z7fV4RVdswp0DL5S6B7rDP0YQYhoGZOD0ykmj25LrV1VIsF7KQbJR9VNwicNINSFD
+VB3Y6i2NKI0iIS/3a2HdCK4YxaqAUOp4YaqDYXtDUz1pwMGmj302OgJi8hqsL5+gTbB38Rt57A60
+FUa1HH1GcN/utBrtKqQZYuCanZ+bjVYpTZJnjdOz9WiGe4hLpJAcWdQQeLOfGDSf+EQd1H7nI5yL
+0p6BFoLbpVw+vFnLlSRwH3MpfpEQw7dCv3WEPsXbA3ac4VpthQiWJkm0wjVoCpigICZR+0tifmlv
+thASvd1iG+4iVtGJilFMGqY3FzYtRn/+guE9i4aCC4O3jdZpUOLO1UQeSsscZN5FXyjyVppr5A4H
+R+r7wFiGnvocRaWW1AG/JGI/zjVmsHEVxx1v8F5HXI3y+/zS1AFulfB92HV/Laos3Dw4B+Xblns+
+MeJiwgTXbmHj+KJbh6zLVvw1kdsi7Fwl69DntpHk8lEP67J6b4zU/SAwmAx/LPrU7SaY98H9id5F
+q1XtfnKyOxYUsRLGrIUBy8SAM9v2WNGZOaVhM07I4nCV9OQTvok/sh1//8OqqQ4Fl8qhhZXjRRTL
+ubcWU7tu8g5YxGszsV1jtJDNAqeI7ek9FJACNKb0WNJuIc23j1GeT9gJDsFcoz0MiHOoyenDkSNG
+fokpvw8BM4DudIQspyFZPufI9/BJ1ROaj7+ZkfQKjpKoCR7I/s+qiJ+P8ljNl2Iqis5A5EmZD0hC
+8PDUfsLbx614jknPM/eXt0H9iB06pub/ivLqgh1l+X2vt3NPE3bZM8LSmqfv9jk/GSNHO7O9nK+g
+/gTDlRSnGaai7IpVrwaO4PTU5XPagIllb3rLdnG84Zx7GhbH8yQoT2nCCQq5F5/ejtXl2EsHS3M7
+8PF7Q2xxeC2WHovo38ruzV2A6F1ZaBvTTHCe2EAIAviXtzWWic1JRazu9cmTtK2J8cbMaVkvjxy7
+gRWv6+RVFqA/CquRGOvhtiMJ7IWhkvlbROJ7UkLbT+Sphz12dfYkBuvUsFQMY7IsWQK/q2Znocjq
+uRMwpLiuY7/bp2iDGWJ3bqdE1Rk4plDxn/Hf1fuGlNOqOEa+HJMMG3bOWPagCmzlyNea/X2FwBGj
+l670Ypu8A/DIgVyExo6nv+wGQc+HaGOqDPF6tMHymOHMaLGp8U4d2uO0RqlH7dn0jLEVGKWpAtd0
+OBAD3c44QvUiEyYmDjoBnwWmGJGXZNJn008QNqQi0oUl7yrkAEkygOXiDb/6YoUevQwc6xrPp7+5
+dHG6wITNz8/KsUdnDqofg9ugrhTvbSmmIXZj7qTN2Hnvl2YI9Qk0/dvFDvk7+4s9ejT98apChMei
+VHi1N+7nuJ0vYlmci2IsyIXFEqL8oiHNsQNOKRDpL+Hfh7dyg5C60aMDnOLYDOO7MD+AR1Z9MMy+
+j1R4Yo85CPaefbCmdMB/VhWHJNUNGIe3CL+mL3m1ZRjUS/hu2Vf1ZHaYjoU2v7qlPEyNP/96oH9O
+vgaIQbiinGM9fMEt2vhaicToeUladCnF8o/I+Ei58ML2LsVOYq/kyc0dohsRPdq9EmHMoe9gR8VX
+XavF+03pc3yA7Cj/skuKsAFEm5FWQiP9QAP8+Hjdl02nsb4LYB6n4wLGNvBa2Hxtj4Z5K1/lENXn
+7Xu5BETW9nxJaGzJGyYhuU8PmZjPdbxmYiI79aTi3Ih5V0CwTdfK8PkN8OO/2hmvU5X95Rc7da5O
+3mpZnwFUtLJq11KLLR3kN6tDXgc5T+93SELKCLcmQv7Ash80ao0pteHRP1BLAwQUAAAACACNlmNU
+7dK91LQEAADBEwAADAAAAHJlc3BvbnNlLnhtbM1YzY7TMBA+g8Q7mEhIcMhvd6FIaVGaettAEpfE
+WVguVbs13Yg0RUn4vfIqPAm8GOPESVO2lQpdVlxSezwz/jwz3ziN+ezzKkEfWZbH67Qn6YomIZZe
+rhdxuuxJTkjkbvf0qaxLKC9m6WKWrFPWk9K19Kx/7655f0hsejHBKMBh5NIQhRchxR6SZp/SjOXK
+olhIpZ4soyReXhWoYHmBZJkLa5tzHIQO8avNYQGhemmMrSEOQHTHtEnk0+CCj8v1UeRaFKz6QxzR
+0B6b6kYmlFzLH0XWCG9UaknpURUuK/dRSIkHe1WmvuXhPjJV+BXKbQXzHI8d28VC2Rlin/LxnfKc
+H9lVfJkwFC9YWqA4fbvOVrMCogvHLrU4eiekQYVV0zSje8Lhb4SVmmf50Zll0yiAbbEyIqbaFgkl
+MsRu343fMljlYwFKLVGJydCiVqVOhnAICsamWg9rA65UnbV1PPMVCV6EYzJpB6aKi5BYwyFkKwSh
+GAn5G2fSn37Kp/BrqvAQYtuhF6DLf4SEYhcE8BTzM+s1zOFZgWkB4Ch/q4xNsSAyeI5t2pP40tR1
+RmMqlR6oQ+Es4eUVi9NPLHvLMhnHaV6wJJEn2bpYv1sniamWaqVB5VugwS8jZ+JBKBGv855kE6gZ
+4paua98jlv389uN7weZxssgvr+JsVfu7nsgBi/N8PsuKq/3pdOz3LON1g2Q0ZrNFSR2R30ovxIFj
+uVOf9E86mt59etLRTbURVjpj4hGXjMqK4kI68XVN0zVdfwzK7dXGRFBxA0ButkeG0lG6ClgKpbpu
+mgjtiViZin8bL88ddvXT2wzQIBycGLY21bbjAY3Ecp1BUBnh1xMHirOvnSjaY8XQjI6p7ljfF8iQ
+WgGdUhzSPtgasmbIRneqnyp802axCbs/3KkLe5ZLG00ywQCAVBGsGP0CuLHFarVWqubt9nvngO57
+Z3/zFTtst1+14RzPnM3dNHx2yavpAFueVBmKGrLm84SlUJqXnBmlrAkbnjTGkBvq2JDzCQkd7nar
+EH0WLz+kS/RwyVYsz1n6aLsOsRU2niBvI59nR0IusQEWPquqGvbc6w7468bpu1y4rdXPLTfCKPId
+8PtAEpcn3H/c9SvX8fSeJOuKIaExcEfMNaUr9eH51FS5uYCocowHoA3A0UFwAwYBvTm8IL2Gtyl4
+nqldSRuTwHkDfXZf2qz8y2rFiiyG3nFUwtqOjkiVppy2j86nfU3RbyxRbZjHpGg3ztODErQF2nHd
+yHN8y7fxteDu4Oc0TguW5nHxZVeQt6Ann9vY+5262isUFbrDEPFAHgipDOjhmE73YDJV0bp2tjEe
+9x197Ixl6XFN7JxlRfxuBm+ck3Ue8xfNozjxtyQwlCft4oJpRf8bY8Ffl/11ZFUjPaju/6gxjddZ
+/HWdFv9lMuDf1f+ZC7gpDkrFn7YgTq0j+89j4wb7D8dzbPN5/HfN54yMdvQen81Z0m4+t1Dz/sjF
+t/QGZWxfd7LO7zsuPYwGHOmtvT3tw9r5J8woE38kNfTODVKjBHQsN/TOYdyIPM8KLraYQBl8D8iW
+bJ7GkMp6w81h9n1c+POvC+IEbdzkxV7cG6ybbx8wqYdc6xdQSwMEFAAAAAgAKltkVGGMrtbZBAAA
++BMAAA0AAAByZXNwb25zZTIueG1szVhfj5NAEH/WxO+AJCb6wN/enTWhNZTutSiwFZbT86Xpn72W
+SKkB1Dtf/Sp+Ev1izsJCqdcm1Z4XX+ju7Mzsb2fmN0sxXl6vYuEzTbNonXRETVZFgSaz9TxKFh3R
+DrDUbp++kDRRyPJJMp/E64R2xGQtvuw+emg87mOLXI6Q4KMgdEggBJcBQa4gTr4kKc3keT4XQa/Y
+RMrym5hmS0pzIb/5CF5yep0r11ksCsuUXnXEBU1oGs1kEHH3kiTE0WIJBjTLBUliwmqrC+QHNvZK
+zLAgCNXSEJl95IPogWHh0CP+JRsX64PQMQlYdfsoJIE1NJSNjCs5pjcIzQHaqFSSwqPCXZbuw4Bg
+F/YqTT3TRV3BUOCXKzcVjAs0tC0HcWW7jzzCxg+Kc36my2gWUyGa0yQXouRqna4mOSQFjl1oMfR2
+QPwSq6qqevuEwd8ISzXX9MJz0yKhD9sieYANpSniSriPnK4TXVFYZWMOSilQ8UnfJGapjvtwCALG
+hlINKwOmVJ61cTzjLfZfB0M8agamjAuXmP0+ZCsAIR9x+Xt71B1/ycbwayjw4GLLJpegy364hCAH
+BPDk83PzHczhWYJpAGAof6uMTbEIuPcKWaQjsqWxYw+GRCw8EJvAWYLZkkbJF5pe0VRCUZLlNI6l
+UbrO1x/WcWwohVphUPrmaNCb0B65EEqB0aMjWhhqBjuF68r3gKY/v/34ntNpFM+z2TJKV5W/24ns
+0SjLppM0X+5Pp219pCmrG0EShnQyL6jD81vqBci3TWfs4e5JS9XaL05amqHUwlJniF3s4EFRUUxI
+Rp6mqpqqaWeg3FytTTgVNwCkentBl1tyWwZLrlTVTR2hPRErUvFv4+U6/bZ2ep8B6gW9E91Sx+p2
+PKCRmI7d80sj9G5kQ3F21RNZPZN1VW8Zyo71fYEMiOmTMUEB6YKtLqm6pLfH2qnMNq0X67B7/Z26
+sGextNHEIwQAcBnBktGvgRtbrFYqpXLebL8PDui+D/Y3X77DdvtVas6xzFnMTc1nB78d95DpiqUh
+ryFzOo1pAqU5Y8woZHXY0Kg2htwQ24Kcj3BgM7dbhejRaPEpWQhPF3RFs4wmz7brEJlB7QnyNvBY
+dkTBwRbAQudlVcOee90Bf50o+ZBxt5X6hemESAg9G/w+EfmdC/cfc/3WsV2tI0qarIvCELjD56rc
+FrvwfGEozJxDVBjGA9D64OgguD6FgN4dXpDewlsXPMvUrqQNsW+/hz67L21mdrNa0TyNoHcclbCm
+oyNSpcqnzaOzaVeVtTtLVBPmMSnajfP0oARtgbYdJ3Rtz/QsdCu4O/g5jpKcJlmU3+wK8hb0+LqJ
+vduqqr1EUaI7DBEL5IGQioAejul0DyZD4a1rZxtjcd/Rx85pmhzXxC5omkcfJvDGOVpnEXvRPIoT
+f0sCXX7eLC6YlvS/Mxb8ddnfRlY20oPq/o8a03CdRl/XSf5fJgP+Xf2fuYCb4qBU/GkLYtQ6sv+c
+6XfYfxieY5vP2d81n3M82NF7PDqlcbP53EPNewMH3dMblL593Ukau++Y9DAaMKT39va0D2vrnzCj
+SPyR1NBad0iNAtCx3NBah3EjdF3Tv9xiAqHwPSBd0GkSQSqrDTeH2fdx4c+/LvATNHHj13txb7Bu
+vn3ApBoyrV9QSwECPwAKAAAAAADDWmRUnAPClC0AAAAtAAAACgAkAAAAAAAAACAAAAAAAAAAYXdu
+cmVzLmR0ZAoAIAAAAAAAAQAYACYI47GxL9gBy5xVabQv2AHhx5lLpi/YAVBLAQI/ABQAAAAAAI2W
+Y1QAAAAAAAAAAAAAAAAHACQAAAAAAAAAEAAAAFUAAABjb25maWcvCgAgAAAAAAABABgA02k7cCcv
+2AFxCo/BsC/YAQL1OnAnL9gBUEsBAj8AFAAAAAgAjZZjVD+Oeo5lAQAA9gMAABIAJAAAAAAAAAAg
+AAAAegAAAGNvbmZpZy9hZGRyZXNzLnhzbAoAIAAAAAAAAQAYAK8bO3AnL9gBtQo/abQv2AGvGztw
+Jy/YAVBLAQI/ABQAAAAIAI2WY1QlKgOrBgIAAOAIAAAZACQAAAAAAAAAIAAAAA8CAABjb25maWcv
+Y29uZmlnLmdlbmVyaWMueHNsCgAgAAAAAAABABgAI0M7cCcv2AFPvD5ptC/YASNDO3AnL9gBUEsB
+Aj8AFAAAAAgAjZZjVNfnylYDBgAAJxYAABoAJAAAAAAAAAAgAAAATAQAAGNvbmZpZy9sYW5ndWFn
+ZS5nZXJtYW4ueHNsCgAgAAAAAAABABgAI0M7cCcv2AEjQztwJy/YASNDO3AnL9gBUEsBAj8AFAAA
+AAgAjZZjVNfnylYDBgAAJxYAABMAJAAAAAAAAAAgAAAAhwoAAGNvbmZpZy9sYW5ndWFnZS54c2wK
+ACAAAAAAAAEAGADTaTtwJy/YARgyP2m0L9gB02k7cCcv2AFQSwECPwAUAAAACACNlmNUD69rVrUF
+AAC4HgAACwAkAAAAAAAAACAAAAC7EAAAZ2VuZXJpYy54c2wKACAAAAAAAAEAGAA8zDtwJy/YAdNc
+PWm0L9gBPMw7cCcv2AFQSwECPwAUAAAAAACNlmNUAAAAAAAAAAAAAAAACAAkAAAAAAAAABAAAACZ
+FgAAaW5jbHVkZS8KACAAAAAAAAEAGACD8ztwJy/YAR6Aj8GwL9gBPMw7cCcv2AFQSwECPwAUAAAA
+CACNlmNU2FtFpDACAABnBQAAFAAkAAAAAAAAACAAAAC/FgAAaW5jbHVkZS9odG1saGVhZC54c2wK
+ACAAAAAAAAEAGACD8ztwJy/YAZ6kP2m0L9gBg/M7cCcv2AFQSwECPwAUAAAACACNlmNUYXjGs2MR
+AAC1gwAAEAAkAAAAAAAAACAAAAAhGQAAaW5jbHVkZS91dGlsLnhzbAoAIAAAAAAAAQAYAIsaPHAn
+L9gBk/lBabQv2AGD8ztwJy/YAVBLAQI/ABQAAAAIAI2WY1Tt0r3UtAQAAMETAAAMACQAAAAAAAAA
+IAAAALIqAAByZXNwb25zZS54bWwKACAAAAAAAAEAGACLGjxwJy/YAfivvAyyL9gBixo8cCcv2AFQ
+SwECPwAUAAAACAAqW2RUYYyu1tkEAAD4EwAADQAkAAAAAAAAACAAAACQLwAAcmVzcG9uc2UyLnht
+bAoAIAAAAAAAAQAYAPZBpyWyL9gBy5xVabQv2AH4r7wMsi/YAVBLBQYAAAAADAAMAJEEAACUNAAAAAA=</Value>
+                    <Timestamp>2022-03-04T11:48:11.671+01:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </zipWithXSLContent>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

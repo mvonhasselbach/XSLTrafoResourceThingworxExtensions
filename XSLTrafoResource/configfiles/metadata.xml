@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities>
+    <ExtensionPackages>
+        <ExtensionPackage
+         dependsOn=""
+         description=""
+         minimumThingWorxVersion="8.5.0"
+         name="XSLTrafoResource"
+         packageVersion="1.0.4"
+         vendor="PTC_OCTO">
+            <JarResources>
+                <FileResource
+                 description=""
+                 file="xsltraforesource.jar"
+                 type="JAR"></FileResource>
+            </JarResources>
+        </ExtensionPackage>
+    </ExtensionPackages>
+    <Resources>
+        <Resource
+         aspect.isCreatable="false"
+         aspect.isEditableExtensionObject="false"
+         className="com.ptc.octo.twx.xsltransform.XSLTrafoResource"
+         description="Resource that can be used to apply XSL Transformations to XML input"
+         name="XSLTrafoResource"></Resource>
+    </Resources>
+</Entities>

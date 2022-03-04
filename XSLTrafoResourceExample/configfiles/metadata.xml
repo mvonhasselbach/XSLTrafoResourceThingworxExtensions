@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities>
+    <ExtensionPackages>
+        <ExtensionPackage
+         dependsOn="XSLTrafoResource"
+         description="Usage Examples of the XSLTrafoResource extension"
+         minimumThingWorxVersion="8.5.0"
+         name="XSLTrafoResourceExample"
+         packageVersion="1.0.0"
+         vendor="PTC_OCTO"></ExtensionPackage>
+    </ExtensionPackages>
+</Entities>
