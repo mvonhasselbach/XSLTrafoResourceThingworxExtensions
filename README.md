@@ -7,4 +7,4 @@ This repo hosts two Thingworx Extensions:
 The Thingworx importable packages of these two extensions is available from the [Releases section](../../releases).
 
 For convenience I also added a command-line version __XSLTrafoCmd__ that uses the same (java default) XSL processor. 
-A runnable jar of it is added to the  [Releases section](../../../releases) as well.
+A runnable jar of it is added to the  [Releases section](../../releases) as well.
