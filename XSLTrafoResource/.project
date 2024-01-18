@@ -20,4 +20,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>com.thingworx.eclipse.extension.ui.ExtensionNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>tests/l-Creo 3D - SpatialARprocedure.pvi</name>
+			<type>1</type>
+			<location>C:/Users/mvonhasselbach/Desktop/CampX PVZs/l-Creo 3D - SpatialARprocedure.pvi</location>
+		</link>
+	</linkedResources>
 </projectDescription>
