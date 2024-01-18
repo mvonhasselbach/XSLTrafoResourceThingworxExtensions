@@ -19,3 +19,6 @@ the xml from a file in the FileReository, the parser is more permissive and allo
 See the __XSLTestThing.XMLTrafoFromFileRepoFiles2()__ service for an example.
 
  The Thingworx importable packages of this two extension is available from the [Releases section](../../../releases).
+ 
+ For convenience I also added a command-line version __XSLTrafoCmd__ that uses the same (java default) XSL processor. 
+ A runnable jar of it is added to the  [Releases section](../../../releases) as well.

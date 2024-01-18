@@ -20,6 +20,9 @@ public class XSLTrafoCmd {
 	public static void main(String[] args) {
 		if(args.length < 2) {
 			System.out.println("usage: java com.ptc.octo.twx.xsltransform.XSLTrafoCmd <XMLFilePath> <XSLFilePath> <ResultFilePath>");
+			System.out.println("	   or");
+			System.out.println("	   java -jar XSLTrafoCmd.jar <XMLFilePath> <XSLFilePath> <ResultFilePath>");
+			System.out.println("");
 			System.out.println("<ResultFilePath> is optional. If ommited the result is returned on the command line");
 			return;
 		}
